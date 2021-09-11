@@ -1,0 +1,19 @@
+{
+  "appId": "com.mycmsapp.app",
+  "appName": "cmsApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "server": {
+    "hostname": "localhost"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "cordova": {}
+}

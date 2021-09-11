@@ -1,0 +1,52 @@
+<body>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title size="medium">Feuilles de temps</ion-title>
+      <ion-buttons slot="start" (click)="goBack()">
+        <ion-back-button color="dark">
+        </ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-list>
+
+
+<ion-item *ngFor="let timesheet of my_timesheets" button="true" (click)="getTimesheetId(timesheet._id)">
+
+            <ion-avatar slot="start">
+              <img src="{{timesheet.image}}" alt="timesheet image" height="60" width="60">
+            </ion-avatar>
+            <ion-label>
+            <h2>{{ timesheet.project }}</h2>
+            <p>
+              <span>Début: {{ timesheet.start }}</span>
+              <span style="margin-left: 15px;">Fin: {{ timesheet.end }}</span>
+
+            </p>
+          </ion-label>
+          </ion-item>
+
+    </ion-list>
+
+</ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="getTimesheets()">
+      <ion-icon name="time"></ion-icon>
+      <ion-label>Feuilles de temps</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="getMyProfile()">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="tab3" (click)="getMyProjects()">
+      <ion-icon name="stats-chart"></ion-icon>
+      <ion-label>Projets</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</body>

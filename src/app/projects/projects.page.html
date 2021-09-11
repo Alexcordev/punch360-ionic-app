@@ -1,0 +1,66 @@
+<body class="main-content">
+  <ion-header style="margin: auto auto 30px auto">
+    <ion-toolbar color="warning">
+      <ion-title>Mes Projets</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button color="dark">
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="logout()">
+          <ion-icon color="dark" slot="icon-only" name="exit"></ion-icon>
+        </ion-button>
+
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+
+    <div class="main-content">
+      <h3 style="color: rgb(71, 71, 71)"> {{username.user.name}}</h3>
+      <img style="border-radius: 50%;" [src]="imagePath + username.user.image" width="100" height="100">
+    </div>
+    <p class="main-clock">{{ clock }}</p>
+    <p class="main-date">{{ date }}</p>
+    <ion-item>
+      <ion-label>Projets</ion-label>
+      <ion-select [(ngModel)]="selected_option" placeholder="choisir">
+        <ion-select-option *ngFor="let project of my_projects" [value]="project.name">{{project.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-card *ngIf="selected_option">
+      <ion-card-content>
+
+        <h5>Projet sélectionné : {{selected_option}}</h5>
+
+      </ion-card-content>
+    </ion-card>
+    <div style="display:flex; width: 100%; align-items: center; justify-content: center; margin-top: 70px;">
+      <div>
+        <ion-button size="small" color="success" (click)="getCurrentPosition()">GO</ion-button>
+      </div>
+      <div>
+        <ion-button size="small" color="danger" (click)="getStopTime()">STOP</ion-button>
+      </div>
+    </div>
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="tab1" (click)="getTimesheets()">
+          <ion-icon name="time"></ion-icon>
+          <ion-label>Feuilles de temps</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="tab2" (click)="getMyProfile()">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-tab-button>
+
+
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-content>
+</body>

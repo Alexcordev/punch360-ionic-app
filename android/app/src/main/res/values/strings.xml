@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cmsApp</string>
+    <string name="title_activity_main">cmsApp</string>
+    <string name="package_name">com.mycmsapp.app</string>
+    <string name="custom_url_scheme">com.mycmsapp.app</string>
+</resources>

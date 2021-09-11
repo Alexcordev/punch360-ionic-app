@@ -1,13 +1,20 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "com.mycmsapp.app",
   "appName": "cmsApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
+  "server": {
+    "hostname": "localhost",
+    "cleartext": true
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
     }
+  },
+  "android": {
+    "allowMixedContent": true
   },
   "cordova": {}
 }
